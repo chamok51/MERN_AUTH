@@ -20,7 +20,7 @@ app.use(cookieParser())
 
 
 app.get('/', (req,res)=>{
-  res.send("Hello World)
+  res.send("Hello World")
 })
 app.use('/api/v1/', authRoutes)
 app.use('/api/v1/', userRoutes)
