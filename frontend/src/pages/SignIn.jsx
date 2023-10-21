@@ -20,7 +20,7 @@ const SignUp = () => {
     e.preventDefault()
     try {
       dispatch({ type: 'LOGIN_START' })
-      const res = await axios.post('/api/v1/auth/signin', formData)
+      const res = await axios.post('https://mern-auth-api-nine.vercel.app/api/v1/auth/signin', formData)
 
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data })
 
