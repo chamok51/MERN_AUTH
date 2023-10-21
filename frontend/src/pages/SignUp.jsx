@@ -17,7 +17,7 @@ const SignUp = () => {
     e.preventDefault()
     try {
       setLoading(true)
-      const res = await axios.post('/api/v1/auth/register', formData)
+      const res = await axios.post('https://mern-auth-api-nine.vercel.app/api/v1/auth/register', formData)
       setLoading(false)
       navigate('/signin')
     } catch (error) {
