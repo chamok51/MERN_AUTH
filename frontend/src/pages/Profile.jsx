@@ -54,7 +54,7 @@ const Profile = () => {
     e.preventDefault()
     try {
       setLoading(true)
-      const res = await axios.put('/api/v1/user', formData)
+      const res = await axios.put('https://mern-auth-api-nine.vercel.app/api/v1/user', formData)
       dispatch({ type: 'UPDATE', payload: res.data })
       setLoading(false)
     } catch (error) {
@@ -65,7 +65,7 @@ const Profile = () => {
   const handleClick = async () => {
     try {
       dispatch({ type: 'LOGOUT' })
-      await axios.get('/api/v1/auth/signout')
+      await axios.get('https://mern-auth-api-nine.vercel.app/api/v1/auth/signout')
       navigate('/signin')
     } catch (error) {
       console.log(error)
@@ -78,7 +78,7 @@ const Profile = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/api/v1/user/${user._id}`)
+      await axios.delete(`https://mern-auth-api-nine.vercel.app/api/v1/user/${user._id}`)
       dispatch({ type: 'DELETE' })
       navigate('/signin')
     } catch (error) {
