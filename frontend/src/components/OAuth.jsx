@@ -12,7 +12,7 @@ const OAuth = () => {
       const auth = getAuth(app)
       const provider = new GoogleAuthProvider()
       const result = await signInWithPopup(auth, provider)
-      const res = await axios.post('/api/v1/auth/google', {
+      const res = await axios.post('https://mern-auth-api-nine.vercel.app/api/v1/auth/google', {
         name: result.user.displayName,
         email: result.user.email,
         photo: result.user.photoURL,
